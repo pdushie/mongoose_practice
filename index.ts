@@ -6,6 +6,7 @@ import userRoutes from "./routes/userRoutes";
 
 // Connect to MongoDB
 mongoose.connect("mongodb://localhost:27017/mydatabase");
+//mongoose.connect("mongodb://given-daphna-webd5010-6e02a7e6.koyeb.app/mydatabase");
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 

@@ -14,10 +14,7 @@ export const getOneUser = async(userID) => {
   try {
     const check = await User.findOne({"_id": userID}) // Check to see if userID being searched for exist
     if (!check) {
-      return { 
-        status: 404,
-        message: "User not found"
-      }
+      return
     }
     return await User.findById(userID)
   } catch (error) {
@@ -35,7 +32,7 @@ export const createUser = async (body) => {
     return {
       status: 201, // HTTP Status: Created
       message: "User created successfully",
-      
+      userDetails: newUser
     };
 
   } catch (error) {
